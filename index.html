@@ -29,8 +29,6 @@
     min-height:100vh;
     overflow-x:hidden;
   }
-
-  /* ── Animated background ── */
   body::before{
     content:'';
     position:fixed;
@@ -41,11 +39,7 @@
     pointer-events:none;
     z-index:0;
   }
-
-  /* ── Layout ── */
   #app{position:relative;z-index:1;min-height:100vh}
-
-  /* ── Nav ── */
   nav{
     display:flex;align-items:center;justify-content:space-between;
     padding:20px 40px;
@@ -67,13 +61,9 @@
     transition:all .2s;font-family:'Inter',sans-serif;
   }
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent2)}
-
-  /* ── Pages ── */
   .page{display:none;animation:fadeIn .3s ease}
   .page.active{display:block}
   @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-
-  /* ── Auth page ── */
   .auth-wrap{
     min-height:calc(100vh - 65px);
     display:flex;align-items:center;justify-content:center;padding:40px 20px;
@@ -115,33 +105,19 @@
   .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 25px #7c3aed50}
   .btn-primary:active{transform:translateY(0)}
   .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
-  .msg{
-    padding:10px 14px;border-radius:8px;font-size:.82rem;margin-top:12px;
-    display:none;
-  }
+  .msg{padding:10px 14px;border-radius:8px;font-size:.82rem;margin-top:12px;display:none}
   .msg.error{background:#ef444415;border:1px solid #ef444430;color:#fca5a5;display:block}
   .msg.success{background:#10b98115;border:1px solid #10b98130;color:#6ee7b7;display:block}
-
-  /* ── Dashboard ── */
   .dash{max-width:900px;margin:0 auto;padding:40px 24px}
   .dash-header{margin-bottom:32px}
   .dash-header h2{font-size:1.5rem;font-weight:700;margin-bottom:4px}
   .dash-header p{color:var(--muted);font-size:.9rem}
-
   .cards-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:32px}
-  .stat-card{
-    background:var(--surface);border:1px solid var(--border);
-    border-radius:14px;padding:20px;
-  }
+  .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px}
   .stat-card .label{font-size:.75rem;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
   .stat-card .value{font-size:1.6rem;font-weight:700;color:var(--accent2)}
   .stat-card .sub{font-size:.75rem;color:var(--muted);margin-top:4px}
-
-  /* ── Upload box ── */
-  .upload-section{
-    background:var(--surface);border:1px solid var(--border);
-    border-radius:16px;padding:28px;margin-bottom:28px;
-  }
+  .upload-section{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:28px}
   .upload-section h3{font-size:1rem;font-weight:600;margin-bottom:20px}
   .repo-row{display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap}
   .repo-row input{
@@ -151,7 +127,6 @@
     font-family:'Inter',sans-serif;outline:none;transition:border-color .2s;
   }
   .repo-row input:focus{border-color:var(--accent)}
-
   .dropzone{
     border:2px dashed var(--border);border-radius:12px;
     padding:40px 20px;text-align:center;cursor:pointer;
@@ -171,7 +146,6 @@
   }
   .file-chip button{background:none;border:none;color:var(--muted);cursor:pointer;font-size:.9rem;line-height:1}
   .file-chip button:hover{color:var(--error)}
-
   .btn-upload{
     margin-top:16px;padding:10px 24px;
     background:linear-gradient(135deg,#7c3aed,#6d28d9);
@@ -181,51 +155,30 @@
   }
   .btn-upload:hover{transform:translateY(-1px);box-shadow:0 6px 20px #7c3aed40}
   .btn-upload:disabled{opacity:.5;cursor:not-allowed;transform:none}
-
-  /* ── Repos ── */
   .repos-section{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px}
   .repos-section h3{font-size:1rem;font-weight:600;margin-bottom:20px}
   .repo-card{
     background:var(--surface2);border:1px solid var(--border);
-    border-radius:12px;padding:16px 20px;margin-bottom:12px;
-    transition:border-color .2s;
+    border-radius:12px;padding:16px 20px;margin-bottom:12px;transition:border-color .2s;
   }
   .repo-card:hover{border-color:#ffffff20}
   .repo-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px}
   .repo-name{font-weight:600;font-size:.95rem;display:flex;align-items:center;gap:8px}
-  .repo-name .icon{font-size:1rem}
   .repo-actions{display:flex;gap:8px}
-  .btn-sm{
-    padding:5px 12px;border-radius:7px;font-size:.75rem;font-weight:500;
-    cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;border:1px solid;
-  }
+  .btn-sm{padding:5px 12px;border-radius:7px;font-size:.75rem;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;border:1px solid}
   .btn-visit{background:#7c3aed20;border-color:#7c3aed40;color:var(--accent2)}
   .btn-visit:hover{background:#7c3aed40}
   .btn-delete{background:#ef444415;border-color:#ef444430;color:#fca5a5}
   .btn-delete:hover{background:#ef444430}
   .file-rows{display:flex;flex-direction:column;gap:6px}
-  .file-row{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:7px 12px;background:var(--bg);border-radius:8px;font-size:.8rem;
-    flex-wrap:wrap;gap:6px;
-  }
-  .file-row .fname{
-    font-family:'JetBrains Mono',monospace;color:var(--muted);
-    display:flex;align-items:center;gap:6px;
-  }
+  .file-row{display:flex;align-items:center;justify-content:space-between;padding:7px 12px;background:var(--bg);border-radius:8px;font-size:.8rem;flex-wrap:wrap;gap:6px}
+  .file-row .fname{font-family:'JetBrains Mono',monospace;color:var(--muted);display:flex;align-items:center;gap:6px}
   .file-row .fsize{color:var(--muted);font-size:.72rem}
   .file-row .factions{display:flex;gap:6px}
-  .copy-btn{
-    background:none;border:1px solid var(--border);color:var(--muted);
-    padding:3px 8px;border-radius:5px;font-size:.7rem;cursor:pointer;
-    transition:all .2s;font-family:'Inter',sans-serif;
-  }
+  .copy-btn{background:none;border:1px solid var(--border);color:var(--muted);padding:3px 8px;border-radius:5px;font-size:.7rem;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
   .copy-btn:hover{border-color:var(--accent);color:var(--accent2)}
-
   .empty-state{text-align:center;padding:40px 20px;color:var(--muted);font-size:.85rem}
   .empty-state .big{font-size:2.5rem;margin-bottom:10px}
-
-  /* ── Toast ── */
   #toast{
     position:fixed;bottom:28px;right:28px;z-index:999;
     background:var(--surface2);border:1px solid var(--border);
@@ -239,20 +192,14 @@
   #toast.t-success{border-color:#10b98140;color:#6ee7b7}
   #toast.t-error{border-color:#ef444440;color:#fca5a5}
   #toast.t-info{border-color:#7c3aed40;color:var(--accent2)}
-
-  /* ── Progress bar ── */
   .progress-wrap{margin-top:12px;display:none}
   .progress-wrap.show{display:block}
   .progress-bar{height:4px;background:var(--surface2);border-radius:4px;overflow:hidden}
   .progress-fill{height:100%;background:linear-gradient(90deg,#7c3aed,#a78bfa);width:0%;transition:width .3s;border-radius:4px}
   .progress-label{font-size:.75rem;color:var(--muted);margin-top:6px}
-
-  /* ── Storage bar ── */
   .storage-bar-wrap{margin-top:8px}
   .storage-bar{height:6px;background:var(--surface2);border-radius:4px;overflow:hidden}
   .storage-fill{height:100%;border-radius:4px;transition:width .5s}
-
-  /* ── Responsive ── */
   @media(max-width:600px){
     nav{padding:16px 20px}
     .auth-card{padding:28px 20px}
@@ -263,8 +210,6 @@
 </head>
 <body>
 <div id="app">
-
-  <!-- NAV -->
   <nav>
     <div class="logo">⚡ PHP Hosting</div>
     <div class="nav-user" id="navUser" style="display:none">
@@ -273,7 +218,6 @@
     </div>
   </nav>
 
-  <!-- AUTH PAGE -->
   <div class="page active" id="authPage">
     <div class="auth-wrap">
       <div class="auth-card">
@@ -283,16 +227,12 @@
           <button class="tab active" onclick="switchTab('login')">Sign in</button>
           <button class="tab" onclick="switchTab('register')">Register</button>
         </div>
-
-        <!-- Login form -->
         <div id="loginForm">
           <div class="field"><label>Username</label><input type="text" id="loginUser" placeholder="yourname"/></div>
           <div class="field"><label>Password</label><input type="password" id="loginPass" placeholder="••••••••"/></div>
           <button class="btn-primary" onclick="doLogin()">Sign in</button>
           <div class="msg" id="loginMsg"></div>
         </div>
-
-        <!-- Register form -->
         <div id="registerForm" style="display:none">
           <div class="field"><label>Username</label><input type="text" id="regUser" placeholder="yourname (letters & numbers only)"/></div>
           <div class="field"><label>Password</label><input type="password" id="regPass" placeholder="min. 8 characters"/></div>
@@ -304,14 +244,12 @@
     </div>
   </div>
 
-  <!-- DASHBOARD PAGE -->
   <div class="page" id="dashPage">
     <div class="dash">
       <div class="dash-header">
         <h2>Dashboard</h2>
         <p>Manage your PHP repositories</p>
       </div>
-
       <div class="cards-row">
         <div class="stat-card">
           <div class="label">Repositories</div>
@@ -326,14 +264,15 @@
         <div class="stat-card">
           <div class="label">Storage used</div>
           <div class="value" id="statStorage">0 MB</div>
-          <div class="sub" id="statStorageSub">of 500 MB</div>
+          <div class="sub">of 500 MB</div>
           <div class="storage-bar-wrap">
-            <div class="storage-bar"><div class="storage-fill" id="storageFill" style="width:0%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div></div>
+            <div class="storage-bar">
+              <div class="storage-fill" id="storageFill" style="width:0%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Upload -->
       <div class="upload-section">
         <h3>📤 Upload PHP Files</h3>
         <div class="repo-row">
@@ -354,35 +293,29 @@
         <div class="msg" id="uploadMsg"></div>
       </div>
 
-      <!-- Repos -->
       <div class="repos-section">
         <h3>📂 Your Repositories</h3>
         <div id="reposList"></div>
       </div>
     </div>
   </div>
-
 </div>
 
-<!-- Toast -->
 <div id="toast"></div>
 
 <script>
-// ── Config ──────────────────────────────────────────────────────────────────
-const API = 'https://emalawi19-php-hosting-backend.hf.space';
+const API      = 'https://emalawi19-php-hosting-backend.hf.space';
+const WORKER   = 'https://php-hosting.emalawi19.workers.dev';
 
-// ── State ────────────────────────────────────────────────────────────────────
-let token = localStorage.getItem('token') || '';
+let token    = localStorage.getItem('token') || '';
 let username = localStorage.getItem('username') || '';
 let selectedFiles = [];
 
-// ── Init ─────────────────────────────────────────────────────────────────────
 window.onload = () => {
   if(token && username){ showDash(); loadFiles(); }
   setupDrop();
 };
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -416,12 +349,11 @@ async function api(path, opts={}){
   return data;
 }
 
-// ── Auth ──────────────────────────────────────────────────────────────────────
 function switchTab(tab){
   document.querySelectorAll('.tab').forEach((t,i)=>{
-    t.classList.toggle('active', (tab==='login'&&i===0)||(tab==='register'&&i===1));
+    t.classList.toggle('active',(tab==='login'&&i===0)||(tab==='register'&&i===1));
   });
-  document.getElementById('loginForm').style.display = tab==='login'?'block':'none';
+  document.getElementById('loginForm').style.display  = tab==='login'?'block':'none';
   document.getElementById('registerForm').style.display = tab==='register'?'block':'none';
 }
 
@@ -443,8 +375,8 @@ async function doLogin(){
 }
 
 async function doRegister(){
-  const u = document.getElementById('regUser').value.trim();
-  const p = document.getElementById('regPass').value;
+  const u  = document.getElementById('regUser').value.trim();
+  const p  = document.getElementById('regPass').value;
   const p2 = document.getElementById('regPass2').value;
   if(!u||!p||!p2){ setMsg('registerMsg','Please fill in all fields','error'); return; }
   if(p!==p2){ setMsg('registerMsg','Passwords do not match','error'); return; }
@@ -478,7 +410,6 @@ function showDash(){
   document.getElementById('navUsername').textContent=username;
 }
 
-// ── Drag & Drop ───────────────────────────────────────────────────────────────
 function setupDrop(){
   const dz = document.getElementById('dropzone');
   const fi = document.getElementById('fileInput');
@@ -493,58 +424,53 @@ function setupDrop(){
 
 function addFiles(files){
   files.forEach(f=>{
-    if(f.size > 25*1024*1024){ toast(f.name+' exceeds 25MB limit','error'); return; }
+    if(f.size>25*1024*1024){ toast(f.name+' exceeds 25MB limit','error'); return; }
     if(!selectedFiles.find(x=>x.name===f.name)) selectedFiles.push(f);
   });
   renderFileList();
 }
 
 function removeFile(name){
-  selectedFiles = selectedFiles.filter(f=>f.name!==name);
+  selectedFiles=selectedFiles.filter(f=>f.name!==name);
   renderFileList();
 }
 
 function renderFileList(){
-  const el = document.getElementById('fileList');
-  el.innerHTML = selectedFiles.map(f=>`
+  const el=document.getElementById('fileList');
+  el.innerHTML=selectedFiles.map(f=>`
     <div class="file-chip">
       ${f.name} <span style="opacity:.5">${fmtSize(f.size)}</span>
       <button onclick="removeFile('${f.name}')">×</button>
     </div>`).join('');
 }
 
-// ── Upload ────────────────────────────────────────────────────────────────────
 async function doUpload(){
-  const repo = document.getElementById('repoName').value.trim();
+  const repo=document.getElementById('repoName').value.trim();
   if(!repo){ toast('Enter a repository name','error'); return; }
   if(!repo.match(/^[a-zA-Z0-9]+$/)){ toast('Repo name: letters & numbers only','error'); return; }
   if(!selectedFiles.length){ toast('Select at least one file','error'); return; }
-
-  const btn = document.querySelector('.btn-upload');
+  const btn=document.querySelector('.btn-upload');
   btn.disabled=true; btn.textContent='Uploading...';
-  const pw = document.getElementById('progressWrap');
-  const pf = document.getElementById('progressFill');
-  const pl = document.getElementById('progressLabel');
+  const pw=document.getElementById('progressWrap');
+  const pf=document.getElementById('progressFill');
+  const pl=document.getElementById('progressLabel');
   pw.classList.add('show'); pf.style.width='10%';
-
-  const fd = new FormData();
-  fd.append('repo', repo);
+  const fd=new FormData();
+  fd.append('repo',repo);
   selectedFiles.forEach(f=>fd.append('files',f));
-
   try{
     pf.style.width='40%'; pl.textContent='Uploading files...';
-    const res = await fetch(API+'/upload',{
+    const res=await fetch(API+'/upload',{
       method:'POST',
       headers:{'Authorization':'Bearer '+token},
       body:fd
     });
     pf.style.width='80%';
-    const data = await res.json();
+    const data=await res.json();
     if(!res.ok) throw new Error(data.detail||'Upload failed');
     pf.style.width='100%'; pl.textContent='Done!';
-    setMsg('uploadMsg',`✅ ${data.uploaded.length} file(s) deployed to /${username}/${repo}`,'success');
-    selectedFiles=[];
-    renderFileList();
+    setMsg('uploadMsg',`✅ ${data.uploaded.length} file(s) deployed to ${WORKER}/${username}/${repo}`,'success');
+    selectedFiles=[]; renderFileList();
     document.getElementById('repoName').value='';
     toast('Files deployed successfully!','success');
     setTimeout(()=>{ pw.classList.remove('show'); pf.style.width='0%'; },1500);
@@ -558,36 +484,33 @@ async function doUpload(){
   }
 }
 
-// ── Load files ────────────────────────────────────────────────────────────────
 async function loadFiles(){
   try{
-    const data = await api('/files');
+    const data=await api('/files');
     renderRepos(data.repos);
-
-    // Stats
     let totalFiles=0;
     data.repos.forEach(r=>totalFiles+=r.files.length);
     document.getElementById('statRepos').textContent=data.repos.length;
     document.getElementById('statFiles').textContent=totalFiles;
     document.getElementById('statStorage').textContent=data.used_mb+' MB';
-    const pct = Math.min((data.used_mb/500)*100,100);
+    const pct=Math.min((data.used_mb/500)*100,100);
     document.getElementById('storageFill').style.width=pct+'%';
     if(pct>80) document.getElementById('storageFill').style.background='linear-gradient(90deg,#f59e0b,#ef4444)';
   } catch(e){ console.error(e); }
 }
 
 function renderRepos(repos){
-  const el = document.getElementById('reposList');
+  const el=document.getElementById('reposList');
   if(!repos.length){
     el.innerHTML=`<div class="empty-state"><div class="big">📭</div><p>No repositories yet.<br>Upload your first PHP project above!</p></div>`;
     return;
   }
-  el.innerHTML = repos.map(r=>`
+  el.innerHTML=repos.map(r=>`
     <div class="repo-card">
       <div class="repo-top">
         <div class="repo-name"><span class="icon">📁</span>${r.repo}</div>
         <div class="repo-actions">
-          <button class="btn-sm btn-visit" onclick="window.open('https://php-hosting.emalawi.workers.dev/${username}/${r.repo}','_blank')">🌐 Visit</button>
+          <button class="btn-sm btn-visit" onclick="window.open('${WORKER}/${username}/${r.repo}','_blank')">🌐 Visit</button>
           <button class="btn-sm btn-delete" onclick="deleteRepo('${r.repo}')">🗑 Delete</button>
         </div>
       </div>
@@ -596,7 +519,7 @@ function renderRepos(repos){
           <div class="file-row">
             <div class="fname">📄 ${f.filename} <span class="fsize">${fmtSize(f.size)}</span></div>
             <div class="factions">
-              <button class="copy-btn" onclick="copyURL('${f.url}')">Copy URL</button>
+              <button class="copy-btn" onclick="copyURL('${WORKER}/${username}/${r.repo}/${f.filename}')">Copy URL</button>
               <button class="copy-btn" style="color:#fca5a5;border-color:#ef444430" onclick="deleteFile('${r.repo}','${f.filename}')">Delete</button>
             </div>
           </div>`).join('')}
