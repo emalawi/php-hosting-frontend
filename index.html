@@ -29,7 +29,7 @@
 
   /* NAV */
   nav{display:flex;align-items:center;justify-content:space-between;padding:20px 40px;border-bottom:1px solid var(--border);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;background:#0a0a0f99}
-  .logo{font-size:1.2rem;font-weight:700;letter-spacing:-0.5px;background:linear-gradient(135deg,#a78bfa,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .logo{font-size:1.2rem;font-weight:700;background:linear-gradient(135deg,#a78bfa,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
   .nav-user{display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--muted)}
   .nav-user span{color:var(--accent2);font-weight:500}
   .btn-ghost{background:none;border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:8px;cursor:pointer;font-size:.8rem;transition:all .2s;font-family:'Inter',sans-serif}
@@ -50,8 +50,9 @@
   .tab.active{background:var(--accent);color:#fff}
   .field{margin-bottom:16px}
   .field label{display:block;font-size:.8rem;color:var(--muted);margin-bottom:6px;font-weight:500}
-  .field input{width:100%;padding:11px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:.9rem;font-family:'Inter',sans-serif;transition:border-color .2s;outline:none}
-  .field input:focus{border-color:var(--accent)}
+  .field input,.field select{width:100%;padding:11px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:.9rem;font-family:'Inter',sans-serif;transition:border-color .2s;outline:none}
+  .field input:focus,.field select:focus{border-color:var(--accent)}
+  .field select option{background:var(--surface2)}
   .btn-primary{width:100%;padding:12px;background:linear-gradient(135deg,#7c3aed,#6d28d9);border:none;border-radius:10px;color:#fff;font-size:.95rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;margin-top:4px}
   .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 25px #7c3aed50}
   .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
@@ -60,49 +61,39 @@
   .msg.success{background:#10b98115;border:1px solid #10b98130;color:#6ee7b7;display:block}
 
   /* DASHBOARD */
-  .dash{max-width:1000px;margin:0 auto;padding:40px 24px}
-  .dash-header{margin-bottom:32px}
+  .dash{max-width:1100px;margin:0 auto;padding:40px 24px}
+  .dash-header{margin-bottom:28px}
   .dash-header h2{font-size:1.5rem;font-weight:700;margin-bottom:4px}
   .dash-header p{color:var(--muted);font-size:.9rem}
 
-  /* TABS NAV */
-  .dash-tabs{display:flex;gap:4px;margin-bottom:28px;background:var(--surface2);padding:4px;border-radius:12px;width:fit-content}
-  .dash-tab{padding:8px 20px;border:none;background:none;color:var(--muted);border-radius:8px;cursor:pointer;font-size:.85rem;font-weight:500;transition:all .2s;font-family:'Inter',sans-serif}
+  /* DASH TABS */
+  .dash-tabs{display:flex;gap:4px;margin-bottom:28px;background:var(--surface2);padding:4px;border-radius:12px;flex-wrap:wrap}
+  .dash-tab{padding:8px 16px;border:none;background:none;color:var(--muted);border-radius:8px;cursor:pointer;font-size:.82rem;font-weight:500;transition:all .2s;font-family:'Inter',sans-serif;white-space:nowrap}
   .dash-tab.active{background:var(--accent);color:#fff}
 
   /* STATS */
-  .cards-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:28px}
+  .cards-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:28px}
   .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px}
-  .stat-card .label{font-size:.75rem;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
-  .stat-card .value{font-size:1.6rem;font-weight:700;color:var(--accent2)}
-  .stat-card .sub{font-size:.75rem;color:var(--muted);margin-top:4px}
+  .stat-card .label{font-size:.72rem;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+  .stat-card .value{font-size:1.5rem;font-weight:700;color:var(--accent2)}
+  .stat-card .sub{font-size:.72rem;color:var(--muted);margin-top:4px}
   .storage-bar-wrap{margin-top:8px}
   .storage-bar{height:6px;background:var(--surface2);border-radius:4px;overflow:hidden}
   .storage-fill{height:100%;border-radius:4px;transition:width .5s;background:linear-gradient(90deg,#7c3aed,#a78bfa)}
 
-  /* SECTION CARDS */
+  /* SECTION CARD */
   .section-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:24px}
   .section-card h3{font-size:1rem;font-weight:600;margin-bottom:20px;display:flex;align-items:center;gap:8px}
 
-  /* FORM ROW */
+  /* FORM */
   .form-row{display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;align-items:flex-end}
-  .form-row input, .form-row select{
-    flex:1;min-width:160px;padding:10px 14px;
-    background:var(--surface2);border:1px solid var(--border);
-    border-radius:10px;color:var(--text);font-size:.9rem;
-    font-family:'Inter',sans-serif;outline:none;transition:border-color .2s
-  }
-  .form-row input:focus, .form-row select:focus{border-color:var(--accent)}
-  .form-row select option{background:var(--surface2);color:var(--text)}
+  .form-row input,.form-row select{flex:1;min-width:140px;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:.9rem;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}
+  .form-row input:focus,.form-row select:focus{border-color:var(--accent)}
+  .form-row select option{background:var(--surface2)}
 
-  /* VISIBILITY TOGGLE */
+  /* VISIBILITY */
   .visibility-row{display:flex;gap:10px;margin-bottom:16px}
-  .vis-btn{
-    flex:1;padding:10px;border-radius:10px;border:1px solid var(--border);
-    background:var(--surface2);color:var(--muted);cursor:pointer;
-    font-family:'Inter',sans-serif;font-size:.85rem;font-weight:500;
-    transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px
-  }
+  .vis-btn{flex:1;padding:10px;border-radius:10px;border:1px solid var(--border);background:var(--surface2);color:var(--muted);cursor:pointer;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:500;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px}
   .vis-btn.active.public{border-color:#10b98160;background:#10b98115;color:#6ee7b7}
   .vis-btn.active.private{border-color:#f59e0b60;background:#f59e0b15;color:#fcd34d}
 
@@ -122,15 +113,19 @@
   .btn-upload{margin-top:16px;padding:10px 24px;background:linear-gradient(135deg,#7c3aed,#6d28d9);border:none;border-radius:10px;color:#fff;font-size:.9rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
   .btn-upload:hover{transform:translateY(-1px);box-shadow:0 6px 20px #7c3aed40}
   .btn-upload:disabled{opacity:.5;cursor:not-allowed;transform:none}
-  .btn-action{padding:8px 18px;border-radius:9px;font-size:.82rem;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;border:1px solid}
+  .btn-action{padding:7px 14px;border-radius:8px;font-size:.78rem;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;border:1px solid;white-space:nowrap}
   .btn-edit{background:#7c3aed20;border-color:#7c3aed40;color:var(--accent2)}
   .btn-edit:hover{background:#7c3aed40}
   .btn-visit{background:#10b98115;border-color:#10b98140;color:#6ee7b7}
   .btn-visit:hover{background:#10b98130}
   .btn-delete{background:#ef444415;border-color:#ef444430;color:#fca5a5}
   .btn-delete:hover{background:#ef444430}
-  .btn-save{background:linear-gradient(135deg,#7c3aed,#6d28d9);border-color:transparent;color:#fff;padding:8px 20px}
+  .btn-save{background:linear-gradient(135deg,#7c3aed,#6d28d9);border-color:transparent;color:#fff}
   .btn-save:hover{box-shadow:0 4px 15px #7c3aed40}
+  .btn-info{background:#3b82f615;border-color:#3b82f640;color:#93c5fd}
+  .btn-info:hover{background:#3b82f630}
+  .btn-warning{background:#f59e0b15;border-color:#f59e0b40;color:#fcd34d}
+  .btn-warning:hover{background:#f59e0b30}
 
   /* PROGRESS */
   .progress-wrap{margin-top:12px;display:none}
@@ -144,10 +139,10 @@
   .repo-card:hover{border-color:#ffffff20}
   .repo-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px}
   .repo-name{font-weight:600;font-size:.95rem;display:flex;align-items:center;gap:8px}
-  .repo-badge{font-size:.7rem;padding:2px 8px;border-radius:20px;font-weight:500}
+  .repo-badge{font-size:.68rem;padding:2px 8px;border-radius:20px;font-weight:500}
   .badge-public{background:#10b98120;color:#6ee7b7;border:1px solid #10b98130}
   .badge-private{background:#f59e0b20;color:#fcd34d;border:1px solid #f59e0b30}
-  .repo-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .repo-actions{display:flex;gap:6px;flex-wrap:wrap}
   .file-rows{display:flex;flex-direction:column;gap:6px}
   .file-row{display:flex;align-items:center;justify-content:space-between;padding:7px 12px;background:var(--bg);border-radius:8px;font-size:.8rem;flex-wrap:wrap;gap:6px}
   .file-row .fname{font-family:'JetBrains Mono',monospace;color:var(--muted);display:flex;align-items:center;gap:6px}
@@ -159,31 +154,66 @@
   .empty-state .big{font-size:2.5rem;margin-bottom:10px}
 
   /* CODE EDITOR */
-  .editor-wrap{display:none}
-  .editor-wrap.open{display:block}
-  .editor-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px}
-  .editor-header h4{font-size:.9rem;font-weight:600;display:flex;align-items:center;gap:6px}
-  .editor-header .file-label{font-family:'JetBrains Mono',monospace;color:var(--accent2);font-size:.8rem;background:var(--surface2);padding:3px 10px;border-radius:6px;border:1px solid var(--border)}
-  .editor-actions{display:flex;gap:8px}
   .editor-toolbar{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
   .toolbar-btn{background:var(--surface2);border:1px solid var(--border);color:var(--muted);padding:4px 10px;border-radius:6px;cursor:pointer;font-size:.75rem;font-family:'Inter',sans-serif;transition:all .2s}
   .toolbar-btn:hover{border-color:var(--accent);color:var(--accent2)}
   .lang-select{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:4px 10px;border-radius:6px;font-size:.75rem;font-family:'Inter',sans-serif;outline:none}
-  textarea#codeEditor{
-    width:100%;min-height:400px;
-    background:#0d0d14;border:1px solid var(--border);
-    border-radius:10px;color:#e2e0ff;
-    font-family:'JetBrains Mono',monospace;font-size:.85rem;
-    line-height:1.6;padding:16px;resize:vertical;outline:none;
-    transition:border-color .2s;tab-size:4;
-  }
-  textarea#codeEditor:focus{border-color:var(--accent)}
+  textarea.code-area{width:100%;min-height:380px;background:#0d0d14;border:1px solid var(--border);border-radius:10px;color:#e2e0ff;font-family:'JetBrains Mono',monospace;font-size:.85rem;line-height:1.6;padding:16px;resize:vertical;outline:none;transition:border-color .2s;tab-size:4}
+  textarea.code-area:focus{border-color:var(--accent)}
   .editor-status{font-size:.75rem;color:var(--muted);margin-top:6px;display:flex;justify-content:space-between}
+
+  /* DATABASE UI */
+  .db-grid{display:grid;grid-template-columns:260px 1fr;gap:20px;min-height:500px}
+  .db-sidebar{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:16px;overflow-y:auto}
+  .db-sidebar h4{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;font-weight:600}
+  .db-item{padding:10px 12px;border-radius:8px;cursor:pointer;transition:all .2s;border:1px solid transparent;margin-bottom:6px}
+  .db-item:hover{background:var(--surface3);border-color:var(--border)}
+  .db-item.active{background:#7c3aed20;border-color:#7c3aed40}
+  .db-item-name{font-weight:600;font-size:.88rem;margin-bottom:2px}
+  .db-item-meta{font-size:.72rem;color:var(--muted)}
+  .db-main{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:20px;overflow:hidden}
+  .db-tabs{display:flex;gap:4px;margin-bottom:20px;background:var(--bg);padding:4px;border-radius:8px}
+  .db-tab{padding:6px 14px;border:none;background:none;color:var(--muted);border-radius:6px;cursor:pointer;font-size:.8rem;font-weight:500;transition:all .2s;font-family:'Inter',sans-serif}
+  .db-tab.active{background:var(--accent);color:#fff}
+  .db-tab-content{display:none}
+  .db-tab-content.active{display:block}
+
+  /* TABLE BUILDER */
+  .col-builder{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:16px}
+  .col-builder-header{display:grid;grid-template-columns:1fr 1fr auto auto auto;gap:8px;padding:8px 12px;background:var(--surface3);font-size:.75rem;color:var(--muted);font-weight:600;text-transform:uppercase}
+  .col-row{display:grid;grid-template-columns:1fr 1fr auto auto auto;gap:8px;padding:8px 12px;border-top:1px solid var(--border);align-items:center}
+  .col-row input,.col-row select{padding:6px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.82rem;font-family:'Inter',sans-serif;outline:none}
+  .col-row input:focus,.col-row select:focus{border-color:var(--accent)}
+  .col-row select option{background:var(--surface2)}
+  .col-checkbox{display:flex;align-items:center;justify-content:center}
+  .col-checkbox input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent);cursor:pointer}
+  .col-del-btn{background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;padding:4px;transition:color .2s}
+  .col-del-btn:hover{color:var(--error)}
+
+  /* DATA TABLE */
+  .data-table-wrap{overflow-x:auto;border-radius:10px;border:1px solid var(--border)}
+  table.data-table{width:100%;border-collapse:collapse;font-size:.82rem}
+  table.data-table th{background:var(--surface3);padding:10px 14px;text-align:left;font-weight:600;color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.3px;border-bottom:1px solid var(--border);white-space:nowrap}
+  table.data-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text);font-family:'JetBrains Mono',monospace;font-size:.8rem;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  table.data-table tr:last-child td{border-bottom:none}
+  table.data-table tr:hover td{background:#ffffff04}
+  .table-pagination{display:flex;align-items:center;justify-content:space-between;margin-top:12px;font-size:.8rem;color:var(--muted)}
+  .table-pagination button{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:5px 12px;border-radius:6px;cursor:pointer;font-size:.78rem;transition:all .2s}
+  .table-pagination button:hover{border-color:var(--accent)}
+  .table-pagination button:disabled{opacity:.4;cursor:not-allowed}
+
+  /* SQL EDITOR */
+  .sql-result{margin-top:16px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+  .sql-result-header{padding:8px 14px;background:var(--surface3);font-size:.78rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+  .sql-result-body{overflow-x:auto;max-height:300px;overflow-y:auto}
+
+  /* PHP CODE */
+  .php-code-block{background:#0d0d14;border:1px solid var(--border);border-radius:10px;padding:16px;font-family:'JetBrains Mono',monospace;font-size:.8rem;color:#a78bfa;line-height:1.7;overflow-x:auto;white-space:pre;margin-top:12px}
 
   /* MODAL */
   .modal-overlay{position:fixed;inset:0;background:#00000080;backdrop-filter:blur(4px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
   .modal-overlay.open{display:flex}
-  .modal{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;width:100%;max-width:480px;box-shadow:0 25px 60px #00000080}
+  .modal{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;width:100%;max-width:500px;box-shadow:0 25px 60px #00000080;max-height:90vh;overflow-y:auto}
   .modal h3{font-size:1.1rem;font-weight:600;margin-bottom:16px}
   .modal-actions{display:flex;gap:10px;margin-top:20px;justify-content:flex-end}
 
@@ -194,13 +224,16 @@
   #toast.t-error{border-color:#ef444440;color:#fca5a5}
   #toast.t-info{border-color:#7c3aed40;color:var(--accent2)}
 
-  @media(max-width:600px){
+  @media(max-width:768px){
+    .db-grid{grid-template-columns:1fr}
     nav{padding:16px 20px}
-    .auth-card{padding:28px 20px}
-    .dash{padding:24px 16px}
-    .repo-top{flex-direction:column;align-items:flex-start}
+    .dash{padding:20px 14px}
+    .col-builder-header,.col-row{grid-template-columns:1fr 1fr auto}
+  }
+  @media(max-width:600px){
+    .auth-card{padding:24px 16px}
     .dash-tabs{width:100%}
-    .dash-tab{flex:1;text-align:center}
+    .dash-tab{flex:1;text-align:center;font-size:.75rem;padding:7px 8px}
   }
 </style>
 </head>
@@ -233,7 +266,7 @@
           <div class="msg" id="loginMsg"></div>
         </div>
         <div id="registerForm" style="display:none">
-          <div class="field"><label>Username</label><input type="text" id="regUser" placeholder="yourname (letters & numbers only)"/></div>
+          <div class="field"><label>Username</label><input type="text" id="regUser" placeholder="yourname"/></div>
           <div class="field"><label>Password</label><input type="password" id="regPass" placeholder="min. 8 characters"/></div>
           <div class="field"><label>Confirm Password</label><input type="password" id="regPass2" placeholder="••••••••"/></div>
           <button class="btn-primary" onclick="doRegister()">Create account</button>
@@ -248,18 +281,18 @@
     <div class="dash">
       <div class="dash-header">
         <h2>Dashboard</h2>
-        <p>Manage your PHP repositories</p>
+        <p>Manage your PHP projects and databases</p>
       </div>
 
-      <!-- DASH TABS -->
       <div class="dash-tabs">
         <button class="dash-tab active" onclick="switchDashTab('overview')">📊 Overview</button>
         <button class="dash-tab" onclick="switchDashTab('upload')">📤 Upload</button>
         <button class="dash-tab" onclick="switchDashTab('editor')">✏️ Editor</button>
         <button class="dash-tab" onclick="switchDashTab('repos')">📂 Repos</button>
+        <button class="dash-tab" onclick="switchDashTab('database')">🗄️ Database</button>
       </div>
 
-      <!-- OVERVIEW TAB -->
+      <!-- OVERVIEW -->
       <div class="dash-tab-content active" id="tab-overview">
         <div class="cards-row">
           <div class="stat-card">
@@ -273,6 +306,11 @@
             <div class="sub">uploaded files</div>
           </div>
           <div class="stat-card">
+            <div class="label">Databases</div>
+            <div class="value" id="statDbs">0</div>
+            <div class="sub">MySQL databases</div>
+          </div>
+          <div class="stat-card">
             <div class="label">Storage</div>
             <div class="value" id="statStorage">0 MB</div>
             <div class="sub">of 500 MB used</div>
@@ -280,24 +318,20 @@
               <div class="storage-bar"><div class="storage-fill" id="storageFill" style="width:0%"></div></div>
             </div>
           </div>
-          <div class="stat-card">
-            <div class="label">Public Repos</div>
-            <div class="value" id="statPublic">0</div>
-            <div class="sub">publicly accessible</div>
-          </div>
         </div>
         <div class="section-card">
           <h3>🚀 Quick Start</h3>
-          <p style="color:var(--muted);font-size:.875rem;line-height:1.7">
-            1. Go to <strong style="color:var(--accent2)">Upload</strong> tab to upload PHP files or entire projects.<br>
-            2. Go to <strong style="color:var(--accent2)">Editor</strong> tab to write or edit code directly in the browser.<br>
-            3. Go to <strong style="color:var(--accent2)">Repos</strong> tab to manage, visit, or delete your projects.<br>
-            4. Your site is live at: <code style="color:var(--accent2);background:var(--surface2);padding:2px 8px;border-radius:4px">php-hosting.emalawi19.workers.dev/username/repo</code>
+          <p style="color:var(--muted);font-size:.875rem;line-height:1.9">
+            📤 <strong style="color:var(--accent2)">Upload</strong> — Upload PHP files or full projects via drag & drop<br>
+            ✏️ <strong style="color:var(--accent2)">Editor</strong> — Write and edit code directly in the browser<br>
+            📂 <strong style="color:var(--accent2)">Repos</strong> — View, visit, and manage your hosted projects<br>
+            🗄️ <strong style="color:var(--accent2)">Database</strong> — Create MySQL databases, build tables, run SQL queries<br>
+            🌐 Your site: <code style="color:var(--accent2);background:var(--surface2);padding:2px 8px;border-radius:4px;font-size:.8rem">php-hosting.emalawi19.workers.dev/username/repo</code>
           </p>
         </div>
       </div>
 
-      <!-- UPLOAD TAB -->
+      <!-- UPLOAD -->
       <div class="dash-tab-content" id="tab-upload" style="display:none">
         <div class="section-card">
           <h3>📤 Upload Files</h3>
@@ -327,12 +361,10 @@
         </div>
       </div>
 
-      <!-- EDITOR TAB -->
+      <!-- EDITOR -->
       <div class="dash-tab-content" id="tab-editor" style="display:none">
         <div class="section-card">
           <h3>✏️ Code Editor</h3>
-
-          <!-- File selector -->
           <div class="form-row" style="margin-bottom:16px">
             <select id="editorRepoSelect" onchange="loadEditorFiles()">
               <option value="">— Select Repository —</option>
@@ -341,39 +373,39 @@
               <option value="">— Select File —</option>
             </select>
           </div>
-
-          <!-- New file -->
           <div class="form-row" style="margin-bottom:16px">
             <input type="text" id="newFileName" placeholder="New filename (e.g. index.php)"/>
-            <button class="btn-action btn-edit" onclick="newFile()" style="white-space:nowrap">+ New File</button>
+            <button class="btn-action btn-edit" onclick="newFile()">+ New File</button>
           </div>
-
-          <!-- Editor area -->
-          <div class="editor-wrap open" id="editorWrap">
-            <div class="editor-header">
-              <h4>📄 <span class="file-label" id="editorFileLabel">untitled.php</span></h4>
-              <div class="editor-actions">
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="font-size:.85rem;font-weight:600">📄</span>
+                <span style="font-family:'JetBrains Mono',monospace;color:var(--accent2);font-size:.8rem;background:var(--surface2);padding:3px 10px;border-radius:6px;border:1px solid var(--border)" id="editorFileLabel">untitled.php</span>
+              </div>
+              <div style="display:flex;gap:8px">
                 <button class="btn-action btn-save" onclick="saveFile()">💾 Save & Deploy</button>
                 <button class="btn-action btn-delete" onclick="deleteCurrentFile()">🗑 Delete</button>
               </div>
             </div>
             <div class="editor-toolbar">
-              <select class="lang-select" id="langSelect" onchange="updateSyntaxHint()">
+              <select class="lang-select" id="langSelect">
                 <option value="php">PHP</option>
                 <option value="html">HTML</option>
                 <option value="css">CSS</option>
                 <option value="js">JavaScript</option>
                 <option value="json">JSON</option>
-                <option value="txt">Plain Text</option>
+                <option value="txt">Text</option>
               </select>
               <button class="toolbar-btn" onclick="insertSnippet('php')">PHP Tags</button>
               <button class="toolbar-btn" onclick="insertSnippet('html')">HTML5</button>
               <button class="toolbar-btn" onclick="insertSnippet('echo')">Echo</button>
               <button class="toolbar-btn" onclick="insertSnippet('for')">For Loop</button>
               <button class="toolbar-btn" onclick="insertSnippet('func')">Function</button>
+              <button class="toolbar-btn" onclick="insertSnippet('pdo')">DB Connect</button>
               <button class="toolbar-btn" onclick="formatCode()">Format</button>
             </div>
-            <textarea id="codeEditor" spellcheck="false" placeholder="Write your code here..."></textarea>
+            <textarea class="code-area" id="codeEditor" spellcheck="false" placeholder="Write your code here..."></textarea>
             <div class="editor-status">
               <span id="editorCursor">Ln 1, Col 1</span>
               <span id="editorChars">0 chars</span>
@@ -383,7 +415,7 @@
         </div>
       </div>
 
-      <!-- REPOS TAB -->
+      <!-- REPOS -->
       <div class="dash-tab-content" id="tab-repos" style="display:none">
         <div class="section-card">
           <h3>📂 Your Repositories</h3>
@@ -391,145 +423,250 @@
         </div>
       </div>
 
-    </div>
-  </div>
-</div>
+      <!-- DATABASE -->
+      <div class="dash-tab-content" id="tab-database" style="display:none">
+        <div class="section-card">
+          <h3>🗄️ Database Manager</h3>
 
-<!-- NEW REPO MODAL -->
-<div class="modal-overlay" id="repoModal">
-  <div class="modal">
-    <h3>⚙️ Repository Settings</h3>
-    <div class="field"><label>Repository Name</label><input type="text" id="modalRepoName" placeholder="myproject"/></div>
-    <div style="margin-bottom:16px">
-      <div style="font-size:.8rem;color:var(--muted);margin-bottom:8px;font-weight:500">VISIBILITY</div>
-      <div class="visibility-row">
-        <button class="vis-btn active public" id="modalVisPublic" onclick="setModalVisibility('public')">🌐 Public</button>
-        <button class="vis-btn private" id="modalVisPrivate" onclick="setModalVisibility('private')">🔒 Private</button>
+          <!-- Create DB -->
+          <div class="form-row" style="margin-bottom:20px">
+            <input type="text" id="newDbName" placeholder="Database name (e.g. myshop)"/>
+            <button class="btn-action btn-save" onclick="createDatabase()">+ Create Database</button>
+          </div>
+
+          <!-- DB Grid -->
+          <div class="db-grid">
+            <!-- Sidebar -->
+            <div class="db-sidebar">
+              <h4>Your Databases</h4>
+              <div id="dbList">
+                <div class="empty-state" style="padding:20px 0">
+                  <div class="big" style="font-size:1.5rem">🗄️</div>
+                  <p style="font-size:.78rem">No databases yet</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Main panel -->
+            <div class="db-main">
+              <div id="dbWelcome" style="text-align:center;padding:60px 20px;color:var(--muted)">
+                <div style="font-size:3rem;margin-bottom:12px">🗄️</div>
+                <p style="font-size:.9rem">Select or create a database to get started</p>
+              </div>
+
+              <div id="dbPanel" style="display:none">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px">
+                  <div style="display:flex;align-items:center;gap:10px">
+                    <span style="font-weight:700;font-size:1rem" id="dbPanelName"></span>
+                    <span style="font-size:.75rem;color:var(--muted)" id="dbPanelMeta"></span>
+                  </div>
+                  <div style="display:flex;gap:8px">
+                    <button class="btn-action btn-info" onclick="exportDatabase()">⬇️ Export SQL</button>
+                    <button class="btn-action btn-delete" onclick="dropDatabase()">🗑 Drop DB</button>
+                  </div>
+                </div>
+
+                <div class="db-tabs">
+                  <button class="db-tab active" onclick="switchDbTab('tables')">📋 Tables</button>
+                  <button class="db-tab" onclick="switchDbTab('builder')">🔨 Table Builder</button>
+                  <button class="db-tab" onclick="switchDbTab('sql')">⚡ SQL Editor</button>
+                  <button class="db-tab" onclick="switchDbTab('phpcode')">🐘 PHP Code</button>
+                </div>
+
+                <!-- TABLES TAB -->
+                <div class="db-tab-content active" id="dbtab-tables">
+                  <div id="tablesList"></div>
+                </div>
+
+                <!-- TABLE BUILDER TAB -->
+                <div class="db-tab-content" id="dbtab-builder">
+                  <div class="form-row" style="margin-bottom:16px">
+                    <input type="text" id="newTableName" placeholder="Table name (e.g. users)"/>
+                  </div>
+                  <div class="col-builder">
+                    <div class="col-builder-header">
+                      <span>Column Name</span>
+                      <span>Data Type</span>
+                      <span>PK</span>
+                      <span>NOT NULL</span>
+                      <span></span>
+                    </div>
+                    <div id="colRows"></div>
+                  </div>
+                  <div style="display:flex;gap:10px;margin-top:12px">
+                    <button class="btn-action btn-edit" onclick="addColumn()">+ Add Column</button>
+                    <button class="btn-action btn-save" onclick="createTable()">✅ Create Table</button>
+                  </div>
+                  <div class="msg" id="builderMsg"></div>
+                </div>
+
+                <!-- SQL EDITOR TAB -->
+                <div class="db-tab-content" id="dbtab-sql">
+                  <div class="editor-toolbar" style="margin-bottom:8px">
+                    <button class="toolbar-btn" onclick="insertSQL('SELECT * FROM ')">SELECT</button>
+                    <button class="toolbar-btn" onclick="insertSQL('INSERT INTO ')">INSERT</button>
+                    <button class="toolbar-btn" onclick="insertSQL('UPDATE ')">UPDATE</button>
+                    <button class="toolbar-btn" onclick="insertSQL('DELETE FROM ')">DELETE</button>
+                    <button class="toolbar-btn" onclick="insertSQL('CREATE TABLE ')">CREATE</button>
+                    <button class="toolbar-btn" onclick="insertSQL('DROP TABLE ')">DROP</button>
+                  </div>
+                  <textarea class="code-area" id="sqlEditor" style="min-height:180px" spellcheck="false" placeholder="SELECT * FROM users;"></textarea>
+                  <div style="display:flex;gap:10px;margin-top:10px;align-items:center">
+                    <button class="btn-action btn-save" onclick="runSQL()">▶ Run Query</button>
+                    <button class="btn-action btn-edit" onclick="clearSQL()">Clear</button>
+                    <span style="font-size:.75rem;color:var(--muted)" id="sqlStatus"></span>
+                  </div>
+                  <div id="sqlResult"></div>
+                </div>
+
+                <!-- PHP CODE TAB -->
+                <div class="db-tab-content" id="dbtab-phpcode">
+                  <p style="color:var(--muted);font-size:.85rem;margin-bottom:12px">Copy this code into your PHP file to connect to this database:</p>
+                  <div style="display:flex;justify-content:flex-end;margin-bottom:8px">
+                    <button class="btn-action btn-edit" onclick="copyPhpCode()">📋 Copy Code</button>
+                  </div>
+                  <div class="php-code-block" id="phpCodeBlock"></div>
+                  <div style="margin-top:16px;padding:14px;background:#f59e0b10;border:1px solid #f59e0b30;border-radius:8px;font-size:.8rem;color:#fcd34d;line-height:1.6">
+                    💡 <strong>How to use:</strong> Upload this connection code as part of your PHP project. Your database runs on the same server as your PHP files, so the path will work automatically.
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="modal-actions">
-      <button class="btn-action btn-delete" onclick="closeModal()">Cancel</button>
-      <button class="btn-action btn-save" onclick="confirmCreateRepo()">Create Repo</button>
+
     </div>
   </div>
 </div>
 
-<!-- TOAST -->
+<!-- INSERT ROW MODAL -->
+<div class="modal-overlay" id="insertRowModal">
+  <div class="modal">
+    <h3>➕ Insert Row</h3>
+    <div id="insertRowFields"></div>
+    <div class="modal-actions">
+      <button class="btn-action btn-delete" onclick="closeInsertModal()">Cancel</button>
+      <button class="btn-action btn-save" onclick="submitInsertRow()">Insert Row</button>
+    </div>
+  </div>
+</div>
+
 <div id="toast"></div>
 
 <script>
-// ── Config ────────────────────────────────────────────────────────────────────
 const API    = 'https://emalawi19-php-hosting-backend.hf.space';
 const WORKER = 'https://php-hosting.emalawi19.workers.dev';
 
-// ── State ─────────────────────────────────────────────────────────────────────
-let token         = localStorage.getItem('token') || '';
-let username      = localStorage.getItem('username') || '';
-let selectedFiles = [];
-let repoVisibility= 'public';
-let allRepos      = [];
-let currentEditFile = null;
-let currentEditRepo = null;
+let token          = localStorage.getItem('token') || '';
+let username       = localStorage.getItem('username') || '';
+let selectedFiles  = [];
+let repoVisibility = 'public';
+let allRepos       = [];
+let currentEditFile= null;
+let currentEditRepo= null;
+let currentDb      = null;
+let currentTable   = null;
+let tableOffset    = 0;
+let insertRowCols  = [];
+let colCount       = 0;
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 window.onload = () => {
-  if(token && username){ showDash(); loadFiles(); }
+  if(token && username){ showDash(); loadFiles(); loadDatabases(); }
   setupDrop();
   setupEditorTracking();
+  addColumn(); addColumn(); // default 2 columns in builder
 };
 
-// ── Page helpers ──────────────────────────────────────────────────────────────
+// ── Helpers ───────────────────────────────────────────────────────────────────
 function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
 
 function switchDashTab(tab){
-  document.querySelectorAll('.dash-tab').forEach((t,i)=>{
-    const tabs = ['overview','upload','editor','repos'];
-    t.classList.toggle('active', tabs[i] === tab);
-  });
+  const tabs=['overview','upload','editor','repos','database'];
+  document.querySelectorAll('.dash-tab').forEach((t,i)=>t.classList.toggle('active',tabs[i]===tab));
   document.querySelectorAll('.dash-tab-content').forEach(c=>c.style.display='none');
   document.getElementById('tab-'+tab).style.display='block';
-  if(tab === 'repos') loadFiles();
-  if(tab === 'editor') populateEditorRepos();
+  if(tab==='repos') loadFiles();
+  if(tab==='editor') populateEditorRepos();
+  if(tab==='database') loadDatabases();
 }
 
-function toast(msg, type='info'){
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.className = `show t-${type}`;
-  setTimeout(()=>t.className='', 3000);
+function toast(msg,type='info'){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.className=`show t-${type}`;
+  setTimeout(()=>t.className='',3000);
 }
 
-function setMsg(id, msg, type){
-  const el = document.getElementById(id);
-  el.textContent = msg;
-  el.className = `msg ${type}`;
+function setMsg(id,msg,type){
+  const el=document.getElementById(id);
+  el.textContent=msg; el.className=`msg ${type}`;
 }
 
 function fmtSize(bytes){
-  if(bytes < 1024) return bytes+'B';
-  if(bytes < 1024*1024) return (bytes/1024).toFixed(1)+'KB';
+  if(bytes<1024) return bytes+'B';
+  if(bytes<1024*1024) return (bytes/1024).toFixed(1)+'KB';
   return (bytes/(1024*1024)).toFixed(2)+'MB';
 }
 
-async function api(path, opts={}){
-  const headers = {'Content-Type':'application/json',...(opts.headers||{})};
-  if(token) headers['Authorization'] = 'Bearer '+token;
-  const res = await fetch(API+path,{...opts,headers});
-  const data = await res.json();
-  if(!res.ok) throw new Error(data.detail || 'Request failed');
+async function api(path,opts={}){
+  const headers={'Content-Type':'application/json',...(opts.headers||{})};
+  if(token) headers['Authorization']='Bearer '+token;
+  const res=await fetch(API+path,{...opts,headers});
+  const data=await res.json();
+  if(!res.ok) throw new Error(data.detail||'Request failed');
   return data;
 }
 
 // ── Auth ──────────────────────────────────────────────────────────────────────
 function switchTab(tab){
-  document.querySelectorAll('.tab').forEach((t,i)=>{
-    t.classList.toggle('active',(tab==='login'&&i===0)||(tab==='register'&&i===1));
-  });
-  document.getElementById('loginForm').style.display  = tab==='login'?'block':'none';
-  document.getElementById('registerForm').style.display = tab==='register'?'block':'none';
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',(tab==='login'&&i===0)||(tab==='register'&&i===1)));
+  document.getElementById('loginForm').style.display=tab==='login'?'block':'none';
+  document.getElementById('registerForm').style.display=tab==='register'?'block':'none';
 }
 
 async function doLogin(){
-  const u = document.getElementById('loginUser').value.trim();
-  const p = document.getElementById('loginPass').value;
-  if(!u||!p){ setMsg('loginMsg','Please fill in all fields','error'); return; }
-  const btn = document.querySelector('#loginForm .btn-primary');
-  btn.disabled=true; btn.textContent='Signing in...';
+  const u=document.getElementById('loginUser').value.trim();
+  const p=document.getElementById('loginPass').value;
+  if(!u||!p){setMsg('loginMsg','Please fill in all fields','error');return;}
+  const btn=document.querySelector('#loginForm .btn-primary');
+  btn.disabled=true;btn.textContent='Signing in...';
   try{
-    const data = await api('/auth/login',{method:'POST',body:JSON.stringify({username:u,password:p})});
-    token=data.access_token; username=data.username;
-    localStorage.setItem('token',token); localStorage.setItem('username',username);
-    showDash(); loadFiles();
+    const data=await api('/auth/login',{method:'POST',body:JSON.stringify({username:u,password:p})});
+    token=data.access_token;username=data.username;
+    localStorage.setItem('token',token);localStorage.setItem('username',username);
+    showDash();loadFiles();loadDatabases();
     toast('Welcome back, '+username+'!','success');
-  } catch(e){ setMsg('loginMsg',e.message,'error'); }
-  finally{ btn.disabled=false; btn.textContent='Sign in'; }
+  }catch(e){setMsg('loginMsg',e.message,'error');}
+  finally{btn.disabled=false;btn.textContent='Sign in';}
 }
 
 async function doRegister(){
   const u=document.getElementById('regUser').value.trim();
   const p=document.getElementById('regPass').value;
   const p2=document.getElementById('regPass2').value;
-  if(!u||!p||!p2){ setMsg('registerMsg','Please fill in all fields','error'); return; }
-  if(p!==p2){ setMsg('registerMsg','Passwords do not match','error'); return; }
-  if(p.length<8){ setMsg('registerMsg','Password must be at least 8 characters','error'); return; }
+  if(!u||!p||!p2){setMsg('registerMsg','Please fill in all fields','error');return;}
+  if(p!==p2){setMsg('registerMsg','Passwords do not match','error');return;}
+  if(p.length<8){setMsg('registerMsg','Password must be at least 8 characters','error');return;}
   const btn=document.querySelector('#registerForm .btn-primary');
-  btn.disabled=true; btn.textContent='Creating account...';
+  btn.disabled=true;btn.textContent='Creating account...';
   try{
     const data=await api('/auth/register',{method:'POST',body:JSON.stringify({username:u,password:p})});
-    token=data.access_token; username=data.username;
-    localStorage.setItem('token',token); localStorage.setItem('username',username);
-    showDash(); loadFiles();
+    token=data.access_token;username=data.username;
+    localStorage.setItem('token',token);localStorage.setItem('username',username);
+    showDash();loadFiles();loadDatabases();
     toast('Account created! Welcome, '+username+'!','success');
-  } catch(e){ setMsg('registerMsg',e.message,'error'); }
-  finally{ btn.disabled=false; btn.textContent='Create account'; }
+  }catch(e){setMsg('registerMsg',e.message,'error');}
+  finally{btn.disabled=false;btn.textContent='Create account';}
 }
 
 function logout(){
-  token=''; username=''; selectedFiles=[]; allRepos=[];
-  localStorage.removeItem('token'); localStorage.removeItem('username');
+  token='';username='';selectedFiles=[];allRepos=[];currentDb=null;
+  localStorage.removeItem('token');localStorage.removeItem('username');
   showPage('authPage');
   document.getElementById('navUser').style.display='none';
   toast('Signed out','info');
@@ -543,40 +680,30 @@ function showDash(){
 
 // ── Visibility ────────────────────────────────────────────────────────────────
 function setVisibility(v){
-  repoVisibility = v;
-  document.getElementById('visPublic').className  = 'vis-btn'+(v==='public'?' active public':'');
-  document.getElementById('visPrivate').className = 'vis-btn'+(v==='private'?' active private':'');
+  repoVisibility=v;
+  document.getElementById('visPublic').className='vis-btn'+(v==='public'?' active public':'');
+  document.getElementById('visPrivate').className='vis-btn'+(v==='private'?' active private':'');
 }
 
-function setModalVisibility(v){
-  repoVisibility = v;
-  document.getElementById('modalVisPublic').className  = 'vis-btn'+(v==='public'?' active public':'');
-  document.getElementById('modalVisPrivate').className = 'vis-btn'+(v==='private'?' active private':'');
-}
-
-// ── Modal ─────────────────────────────────────────────────────────────────────
-function closeModal(){ document.getElementById('repoModal').classList.remove('open'); }
-function confirmCreateRepo(){ closeModal(); }
-
-// ── Drag & Drop ───────────────────────────────────────────────────────────────
+// ── Drop & upload ─────────────────────────────────────────────────────────────
 function setupDrop(){
   const dz=document.getElementById('dropzone');
   const fi=document.getElementById('fileInput');
   dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('drag')});
   dz.addEventListener('dragleave',()=>dz.classList.remove('drag'));
-  dz.addEventListener('drop',e=>{ e.preventDefault(); dz.classList.remove('drag'); addFiles([...e.dataTransfer.files]); });
-  fi.addEventListener('change',()=>{ addFiles([...fi.files]); fi.value=''; });
+  dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('drag');addFiles([...e.dataTransfer.files])});
+  fi.addEventListener('change',()=>{addFiles([...fi.files]);fi.value='';});
 }
 
 function addFiles(files){
   files.forEach(f=>{
-    if(f.size>25*1024*1024){ toast(f.name+' exceeds 25MB','error'); return; }
+    if(f.size>25*1024*1024){toast(f.name+' exceeds 25MB','error');return;}
     if(!selectedFiles.find(x=>x.name===f.name)) selectedFiles.push(f);
   });
   renderFileList();
 }
 
-function removeFile(name){ selectedFiles=selectedFiles.filter(f=>f.name!==name); renderFileList(); }
+function removeFile(name){selectedFiles=selectedFiles.filter(f=>f.name!==name);renderFileList();}
 
 function renderFileList(){
   document.getElementById('fileList').innerHTML=selectedFiles.map(f=>`
@@ -584,50 +711,37 @@ function renderFileList(){
     <button onclick="removeFile('${f.name}')">×</button></div>`).join('');
 }
 
-// ── Upload ────────────────────────────────────────────────────────────────────
 async function doUpload(){
   const repo=document.getElementById('repoName').value.trim();
-  if(!repo){ toast('Enter a repository name','error'); return; }
-  if(!repo.match(/^[a-zA-Z0-9]+$/)){ toast('Repo name: letters & numbers only','error'); return; }
-  if(!selectedFiles.length){ toast('Select at least one file','error'); return; }
-
+  if(!repo){toast('Enter a repository name','error');return;}
+  if(!repo.match(/^[a-zA-Z0-9]+$/)){toast('Repo name: letters & numbers only','error');return;}
+  if(!selectedFiles.length){toast('Select at least one file','error');return;}
   const btn=document.querySelector('.btn-upload');
-  btn.disabled=true; btn.textContent='Uploading...';
+  btn.disabled=true;btn.textContent='Uploading...';
   const pw=document.getElementById('progressWrap');
   const pf=document.getElementById('progressFill');
   const pl=document.getElementById('progressLabel');
-  pw.classList.add('show'); pf.style.width='10%';
-
+  pw.classList.add('show');pf.style.width='10%';
   const fd=new FormData();
-  fd.append('repo', repo);
-  fd.append('visibility', repoVisibility);
+  fd.append('repo',repo);fd.append('visibility',repoVisibility);
   selectedFiles.forEach(f=>fd.append('files',f));
-
   try{
-    pf.style.width='40%'; pl.textContent='Uploading to GitHub...';
-    const res=await fetch(API+'/upload',{
-      method:'POST',
-      headers:{'Authorization':'Bearer '+token},
-      body:fd
-    });
+    pf.style.width='40%';pl.textContent='Uploading to GitHub...';
+    const res=await fetch(API+'/upload',{method:'POST',headers:{'Authorization':'Bearer '+token},body:fd});
     pf.style.width='80%';
     const data=await res.json();
     if(!res.ok) throw new Error(data.detail||'Upload failed');
-    pf.style.width='100%'; pl.textContent='Done!';
-    const vis = repoVisibility==='public'?'🌐 Public':'🔒 Private';
-    setMsg('uploadMsg',`✅ ${data.uploaded.length} file(s) deployed — ${vis} — ${WORKER}/${username}/${repo}`,'success');
-    selectedFiles=[]; renderFileList();
+    pf.style.width='100%';pl.textContent='Done!';
+    setMsg('uploadMsg',`✅ ${data.uploaded.length} file(s) deployed to ${WORKER}/${username}/${repo}`,'success');
+    selectedFiles=[];renderFileList();
     document.getElementById('repoName').value='';
-    toast('Deployed successfully!','success');
-    setTimeout(()=>{ pw.classList.remove('show'); pf.style.width='0%'; },1500);
+    toast('Deployed!','success');
+    setTimeout(()=>{pw.classList.remove('show');pf.style.width='0%';},1500);
     loadFiles();
-  } catch(e){
+  }catch(e){
     setMsg('uploadMsg',e.message,'error');
-    pw.classList.remove('show');
-    toast(e.message,'error');
-  } finally{
-    btn.disabled=false; btn.textContent='🚀 Upload & Deploy';
-  }
+    pw.classList.remove('show');toast(e.message,'error');
+  }finally{btn.disabled=false;btn.textContent='🚀 Upload & Deploy';}
 }
 
 // ── Load files ────────────────────────────────────────────────────────────────
@@ -636,32 +750,28 @@ async function loadFiles(){
     const data=await api('/files');
     allRepos=data.repos||[];
     renderRepos(allRepos);
-    let totalFiles=0, publicCount=0;
-    allRepos.forEach(r=>{ totalFiles+=r.files.length; if(r.visibility==='public') publicCount++; });
+    let totalFiles=0;
+    allRepos.forEach(r=>totalFiles+=r.files.length);
     document.getElementById('statRepos').textContent=allRepos.length;
     document.getElementById('statFiles').textContent=totalFiles;
     document.getElementById('statStorage').textContent=data.used_mb+' MB';
-    document.getElementById('statPublic').textContent=publicCount;
     const pct=Math.min((data.used_mb/500)*100,100);
     document.getElementById('storageFill').style.width=pct+'%';
     if(pct>80) document.getElementById('storageFill').style.background='linear-gradient(90deg,#f59e0b,#ef4444)';
-  } catch(e){ console.error(e); }
+  }catch(e){console.error(e);}
 }
 
 function renderRepos(repos){
   const el=document.getElementById('reposList');
   if(!repos.length){
-    el.innerHTML=`<div class="empty-state"><div class="big">📭</div><p>No repositories yet.<br>Upload your first PHP project above!</p></div>`;
+    el.innerHTML=`<div class="empty-state"><div class="big">📭</div><p>No repositories yet.<br>Upload your first PHP project!</p></div>`;
     return;
   }
   el.innerHTML=repos.map(r=>`
     <div class="repo-card">
       <div class="repo-top">
-        <div class="repo-name">
-          📁 ${r.repo}
-          <span class="repo-badge ${r.visibility==='private'?'badge-private':'badge-public'}">
-            ${r.visibility==='private'?'🔒 Private':'🌐 Public'}
-          </span>
+        <div class="repo-name">📁 ${r.repo}
+          <span class="repo-badge ${r.visibility==='private'?'badge-private':'badge-public'}">${r.visibility==='private'?'🔒 Private':'🌐 Public'}</span>
         </div>
         <div class="repo-actions">
           <button class="btn-action btn-edit" onclick="openEditorForRepo('${r.repo}')">✏️ Edit</button>
@@ -683,26 +793,25 @@ function renderRepos(repos){
     </div>`).join('');
 }
 
-// ── Delete ────────────────────────────────────────────────────────────────────
 async function deleteRepo(repo){
-  if(!confirm('Delete entire repo "'+repo+'"? This cannot be undone.')) return;
-  try{ await api('/repo/'+repo,{method:'DELETE'}); toast('Repo deleted','info'); loadFiles(); }
-  catch(e){ toast(e.message,'error'); }
+  if(!confirm('Delete entire repo "'+repo+'"?')) return;
+  try{await api('/repo/'+repo,{method:'DELETE'});toast('Repo deleted','info');loadFiles();}
+  catch(e){toast(e.message,'error');}
 }
 
 async function deleteFile(repo,filename){
   if(!confirm('Delete '+filename+'?')) return;
-  try{ await api('/files/'+repo+'/'+filename,{method:'DELETE'}); toast(filename+' deleted','info'); loadFiles(); }
-  catch(e){ toast(e.message,'error'); }
+  try{await api('/files/'+repo+'/'+filename,{method:'DELETE'});toast(filename+' deleted','info');loadFiles();}
+  catch(e){toast(e.message,'error');}
 }
 
-function copyURL(url){ navigator.clipboard.writeText(url); toast('URL copied!','success'); }
+function copyURL(url){navigator.clipboard.writeText(url);toast('URL copied!','success');}
 
 // ── Editor ────────────────────────────────────────────────────────────────────
 function populateEditorRepos(){
   const sel=document.getElementById('editorRepoSelect');
   sel.innerHTML='<option value="">— Select Repository —</option>';
-  allRepos.forEach(r=>{ sel.innerHTML+=`<option value="${r.repo}">${r.repo}</option>`; });
+  allRepos.forEach(r=>{sel.innerHTML+=`<option value="${r.repo}">${r.repo}</option>`;});
 }
 
 function loadEditorFiles(){
@@ -712,7 +821,7 @@ function loadEditorFiles(){
   if(!repo) return;
   const r=allRepos.find(x=>x.repo===repo);
   if(!r) return;
-  r.files.forEach(f=>{ sel.innerHTML+=`<option value="${f.filename}">${f.filename}</option>`; });
+  r.files.forEach(f=>{sel.innerHTML+=`<option value="${f.filename}">${f.filename}</option>`;});
   currentEditRepo=repo;
 }
 
@@ -721,37 +830,27 @@ async function loadFileIntoEditor(){
   const filename=document.getElementById('editorFileSelect').value;
   if(!repo||!filename) return;
   try{
-    const res=await fetch(`${API}/serve/${username}/${repo}/${filename}`,{
-      headers:{'Authorization':'Bearer '+token}
-    });
+    const res=await fetch(`${API}/serve/${username}/${repo}/${filename}`,{headers:{'Authorization':'Bearer '+token}});
     const text=await res.text();
     document.getElementById('codeEditor').value=text;
     document.getElementById('editorFileLabel').textContent=filename;
-    currentEditFile=filename;
-    currentEditRepo=repo;
-    updateLangFromFilename(filename);
-    updateEditorStats();
-    toast('File loaded: '+filename,'info');
-  } catch(e){ toast('Could not load file: '+e.message,'error'); }
+    currentEditFile=filename;currentEditRepo=repo;
+    updateLangFromFilename(filename);updateEditorStats();
+    toast('Loaded: '+filename,'info');
+  }catch(e){toast('Could not load: '+e.message,'error');}
 }
 
 function openEditorForRepo(repo){
   switchDashTab('editor');
-  setTimeout(()=>{
-    const sel=document.getElementById('editorRepoSelect');
-    sel.value=repo;
-    loadEditorFiles();
-    currentEditRepo=repo;
-  },100);
+  setTimeout(()=>{document.getElementById('editorRepoSelect').value=repo;loadEditorFiles();},100);
 }
 
-function openEditorForFile(repo, filename){
+function openEditorForFile(repo,filename){
   switchDashTab('editor');
-  setTimeout(async ()=>{
+  setTimeout(async()=>{
     document.getElementById('editorRepoSelect').value=repo;
-    loadEditorFiles();
-    currentEditRepo=repo;
-    setTimeout(async ()=>{
+    loadEditorFiles();currentEditRepo=repo;
+    setTimeout(async()=>{
       document.getElementById('editorFileSelect').value=filename;
       await loadFileIntoEditor();
     },200);
@@ -760,8 +859,8 @@ function openEditorForFile(repo, filename){
 
 function newFile(){
   const name=document.getElementById('newFileName').value.trim();
-  if(!name){ toast('Enter a filename','error'); return; }
-  if(!currentEditRepo){ toast('Select a repository first','error'); return; }
+  if(!name){toast('Enter a filename','error');return;}
+  if(!currentEditRepo){toast('Select a repository first','error');return;}
   document.getElementById('codeEditor').value=getDefaultContent(name);
   document.getElementById('editorFileLabel').textContent=name;
   currentEditFile=name;
@@ -787,46 +886,33 @@ function updateLangFromFilename(filename){
 }
 
 async function saveFile(){
-  if(!currentEditRepo){ toast('Select a repository first','error'); return; }
-  if(!currentEditFile){ toast('No file selected or created','error'); return; }
+  if(!currentEditRepo){toast('Select a repository first','error');return;}
+  if(!currentEditFile){toast('No file selected','error');return;}
   const content=document.getElementById('codeEditor').value;
   const blob=new Blob([content],{type:'text/plain'});
-  const file=new File([blob], currentEditFile);
+  const file=new File([blob],currentEditFile);
   const fd=new FormData();
-  fd.append('repo', currentEditRepo);
-  fd.append('visibility', repoVisibility);
-  fd.append('files', file);
+  fd.append('repo',currentEditRepo);fd.append('visibility',repoVisibility);fd.append('files',file);
   try{
-    const res=await fetch(API+'/upload',{
-      method:'POST',
-      headers:{'Authorization':'Bearer '+token},
-      body:fd
-    });
+    const res=await fetch(API+'/upload',{method:'POST',headers:{'Authorization':'Bearer '+token},body:fd});
     const data=await res.json();
     if(!res.ok) throw new Error(data.detail||'Save failed');
-    setMsg('editorMsg','✅ '+currentEditFile+' saved and deployed!','success');
-    toast('Saved: '+currentEditFile,'success');
-    loadFiles();
-  } catch(e){
-    setMsg('editorMsg',e.message,'error');
-    toast(e.message,'error');
-  }
+    setMsg('editorMsg','✅ '+currentEditFile+' saved!','success');
+    toast('Saved: '+currentEditFile,'success');loadFiles();
+  }catch(e){setMsg('editorMsg',e.message,'error');toast(e.message,'error');}
 }
 
 async function deleteCurrentFile(){
-  if(!currentEditRepo||!currentEditFile){ toast('No file selected','error'); return; }
+  if(!currentEditRepo||!currentEditFile){toast('No file selected','error');return;}
   if(!confirm('Delete '+currentEditFile+'?')) return;
   try{
     await api('/files/'+currentEditRepo+'/'+currentEditFile,{method:'DELETE'});
     document.getElementById('codeEditor').value='';
     document.getElementById('editorFileLabel').textContent='untitled.php';
-    currentEditFile=null;
-    toast('File deleted','info');
-    loadFiles();
-  } catch(e){ toast(e.message,'error'); }
+    currentEditFile=null;toast('File deleted','info');loadFiles();
+  }catch(e){toast(e.message,'error');}
 }
 
-// ── Snippets ──────────────────────────────────────────────────────────────────
 function insertSnippet(type){
   const editor=document.getElementById('codeEditor');
   const pos=editor.selectionStart;
@@ -834,24 +920,20 @@ function insertSnippet(type){
     php:`<?php\n\n?>`,
     html:`<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8"/>\n  <title>Page Title</title>\n</head>\n<body>\n\n</body>\n</html>`,
     echo:`echo "<p>Hello World</p>";`,
-    for:`for($i = 0; $i < 10; $i++) {\n    echo $i;\n}`,
+    for:`for($i = 0; $i < 10; $i++) {\n    echo $i . "<br>";\n}`,
     func:`function myFunction($param) {\n    return $param;\n}`,
+    pdo:`$pdo = new PDO("sqlite:" . __DIR__ . "/mydb.db");\n$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);\n$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);`,
   };
   const snippet=snippets[type]||'';
-  const before=editor.value.substring(0,pos);
-  const after=editor.value.substring(pos);
-  editor.value=before+snippet+after;
+  editor.value=editor.value.substring(0,pos)+snippet+editor.value.substring(pos);
   editor.selectionStart=editor.selectionEnd=pos+snippet.length;
-  editor.focus();
-  updateEditorStats();
+  editor.focus();updateEditorStats();
 }
 
 function formatCode(){
   const editor=document.getElementById('codeEditor');
-  let code=editor.value;
-  // Basic indent formatting
   let indent=0;
-  const lines=code.split('\n');
+  const lines=editor.value.split('\n');
   const formatted=lines.map(line=>{
     const trimmed=line.trim();
     if(trimmed.match(/^[}\])]/)){ indent=Math.max(0,indent-1); }
@@ -860,16 +942,12 @@ function formatCode(){
     return result;
   });
   editor.value=formatted.join('\n');
-  updateEditorStats();
-  toast('Code formatted','info');
+  updateEditorStats();toast('Formatted','info');
 }
 
-function updateSyntaxHint(){ toast('Language set to: '+document.getElementById('langSelect').value,'info'); }
-
-// ── Editor tracking ───────────────────────────────────────────────────────────
 function setupEditorTracking(){
   const editor=document.getElementById('codeEditor');
-  editor.addEventListener('keydown', e=>{
+  editor.addEventListener('keydown',e=>{
     if(e.key==='Tab'){
       e.preventDefault();
       const pos=editor.selectionStart;
@@ -877,9 +955,9 @@ function setupEditorTracking(){
       editor.selectionStart=editor.selectionEnd=pos+4;
     }
   });
-  editor.addEventListener('input', updateEditorStats);
-  editor.addEventListener('click', updateEditorStats);
-  editor.addEventListener('keyup', updateEditorStats);
+  editor.addEventListener('input',updateEditorStats);
+  editor.addEventListener('click',updateEditorStats);
+  editor.addEventListener('keyup',updateEditorStats);
 }
 
 function updateEditorStats(){
@@ -887,10 +965,335 @@ function updateEditorStats(){
   const text=editor.value;
   const pos=editor.selectionStart;
   const lines=text.substring(0,pos).split('\n');
-  const ln=lines.length;
-  const col=lines[lines.length-1].length+1;
-  document.getElementById('editorCursor').textContent=`Ln ${ln}, Col ${col}`;
+  document.getElementById('editorCursor').textContent=`Ln ${lines.length}, Col ${lines[lines.length-1].length+1}`;
   document.getElementById('editorChars').textContent=`${text.length} chars`;
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// ── DATABASE MANAGER ──────────────────────────────────────────────────────────
+// ══════════════════════════════════════════════════════════════════════════════
+
+async function loadDatabases(){
+  try{
+    const data=await api('/db');
+    document.getElementById('statDbs').textContent=data.count;
+    renderDbList(data.databases);
+  }catch(e){console.error(e);}
+}
+
+function renderDbList(dbs){
+  const el=document.getElementById('dbList');
+  if(!dbs.length){
+    el.innerHTML=`<div class="empty-state" style="padding:20px 0"><div class="big" style="font-size:1.5rem">🗄️</div><p style="font-size:.78rem">No databases yet</p></div>`;
+    return;
+  }
+  el.innerHTML=dbs.map(db=>`
+    <div class="db-item ${currentDb===db.name?'active':''}" onclick="selectDatabase('${db.name}')">
+      <div class="db-item-name">🗄️ ${db.name}</div>
+      <div class="db-item-meta">${db.table_count} tables · ${db.size_kb} KB</div>
+    </div>`).join('');
+}
+
+async function selectDatabase(name){
+  currentDb=name;currentTable=null;
+  document.querySelectorAll('.db-item').forEach(el=>{
+    el.classList.toggle('active',el.querySelector('.db-item-name').textContent.includes(name));
+  });
+  document.getElementById('dbWelcome').style.display='none';
+  document.getElementById('dbPanel').style.display='block';
+  document.getElementById('dbPanelName').textContent='🗄️ '+name;
+  await loadTables();
+  await loadPhpCode();
+}
+
+function switchDbTab(tab){
+  const tabs=['tables','builder','sql','phpcode'];
+  document.querySelectorAll('.db-tab').forEach((t,i)=>t.classList.toggle('active',tabs[i]===tab));
+  document.querySelectorAll('.db-tab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById('dbtab-'+tab).classList.add('active');
+}
+
+async function createDatabase(){
+  const name=document.getElementById('newDbName').value.trim();
+  if(!name){toast('Enter a database name','error');return;}
+  if(!name.replace('_','').match(/^[a-zA-Z0-9]+$/)){toast('Letters, numbers, underscores only','error');return;}
+  try{
+    const data=await api('/db/create',{method:'POST',body:JSON.stringify({name})});
+    toast('Database "'+name+'" created!','success');
+    document.getElementById('newDbName').value='';
+    await loadDatabases();
+    await selectDatabase(name);
+  }catch(e){toast(e.message,'error');}
+}
+
+async function dropDatabase(){
+  if(!currentDb) return;
+  if(!confirm('Drop database "'+currentDb+'"? All data will be lost!')) return;
+  try{
+    await api('/db/'+currentDb,{method:'DELETE'});
+    toast('Database dropped','info');
+    currentDb=null;
+    document.getElementById('dbWelcome').style.display='block';
+    document.getElementById('dbPanel').style.display='none';
+    await loadDatabases();
+  }catch(e){toast(e.message,'error');}
+}
+
+async function loadTables(){
+  if(!currentDb) return;
+  try{
+    const data=await api('/db/'+currentDb+'/tables');
+    const meta=`${data.tables.length} tables`;
+    document.getElementById('dbPanelMeta').textContent=meta;
+    renderTables(data.tables);
+  }catch(e){toast(e.message,'error');}
+}
+
+function renderTables(tables){
+  const el=document.getElementById('tablesList');
+  if(!tables.length){
+    el.innerHTML=`<div class="empty-state"><div class="big">📋</div><p>No tables yet.<br>Use the Table Builder to create one.</p></div>`;
+    return;
+  }
+  el.innerHTML=tables.map(t=>`
+    <div class="repo-card" style="margin-bottom:12px">
+      <div class="repo-top">
+        <div class="repo-name">📋 ${t.name} <span style="font-size:.75rem;color:var(--muted);font-weight:400">${t.row_count} rows</span></div>
+        <div class="repo-actions">
+          <button class="btn-action btn-edit" onclick="viewTableData('${t.name}',0)">👁 View Data</button>
+          <button class="btn-action btn-info" onclick="openInsertModal('${t.name}',${JSON.stringify(t.columns).replace(/"/g,'&quot;')})">➕ Insert Row</button>
+          <button class="btn-action btn-delete" onclick="dropTable('${t.name}')">🗑 Drop</button>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">
+        ${t.columns.map(c=>`
+          <span style="font-size:.72rem;padding:2px 8px;border-radius:4px;background:var(--surface3);border:1px solid var(--border);font-family:'JetBrains Mono',monospace;color:var(--muted)">
+            ${c.pk?'🔑 ':''}${c.name} <span style="color:#a78bfa">${c.type}</span>
+          </span>`).join('')}
+      </div>
+      <div id="tableData-${t.name}" style="margin-top:12px;display:none"></div>
+    </div>`).join('');
+}
+
+async function viewTableData(tableName, offset){
+  currentTable=tableName;tableOffset=offset;
+  try{
+    const data=await api(`/db/${currentDb}/tables/${tableName}/data?limit=20&offset=${offset}`);
+    const el=document.getElementById('tableData-'+tableName);
+    if(!data.rows.length && offset===0){
+      el.innerHTML=`<p style="color:var(--muted);font-size:.82rem;padding:8px">No data in this table yet.</p>`;
+      el.style.display='block';return;
+    }
+    let html=`<div class="data-table-wrap"><table class="data-table"><thead><tr>`;
+    data.columns.forEach(c=>{html+=`<th>${c}</th>`;});
+    html+=`<th>Actions</th></tr></thead><tbody>`;
+    data.rows.forEach(row=>{
+      html+=`<tr>`;
+      data.columns.forEach(c=>{html+=`<td title="${row[c]??''}">${row[c]??'<span style="color:var(--muted)">null</span>'}</td>`;});
+      html+=`<td><button class="copy-btn" style="color:#fca5a5;border-color:#ef444430" onclick="deleteRow('${tableName}',${row[data.columns[0]]??0},'${data.columns[0]}')">Delete</button></td>`;
+      html+=`</tr>`;
+    });
+    html+=`</tbody></table></div>`;
+    html+=`<div class="table-pagination">
+      <span>${data.total} total rows</span>
+      <div style="display:flex;gap:8px">
+        <button onclick="viewTableData('${tableName}',${Math.max(0,offset-20)})" ${offset===0?'disabled':''}>← Prev</button>
+        <span style="padding:5px 10px">${Math.floor(offset/20)+1}</span>
+        <button onclick="viewTableData('${tableName}',${offset+20})" ${offset+20>=data.total?'disabled':''}>Next →</button>
+      </div>
+    </div>`;
+    el.innerHTML=html;
+    el.style.display='block';
+  }catch(e){toast(e.message,'error');}
+}
+
+async function dropTable(name){
+  if(!confirm('Drop table "'+name+'"? All data will be lost!')) return;
+  try{
+    await api(`/db/${currentDb}/tables/${name}`,{method:'DELETE'});
+    toast('Table "'+name+'" dropped','info');
+    await loadTables();
+  }catch(e){toast(e.message,'error');}
+}
+
+async function deleteRow(tableName,rowId,pkCol){
+  if(!confirm('Delete this row?')) return;
+  try{
+    await api(`/db/${currentDb}/tables/${tableName}/rows/${rowId}?pk_col=${pkCol}`,{method:'DELETE'});
+    toast('Row deleted','info');
+    await viewTableData(tableName,tableOffset);
+  }catch(e){toast(e.message,'error');}
+}
+
+// ── Table builder ─────────────────────────────────────────────────────────────
+function addColumn(){
+  colCount++;
+  const row=document.createElement('div');
+  row.className='col-row';
+  row.id='col-'+colCount;
+  row.innerHTML=`
+    <input type="text" placeholder="column_name" id="colName-${colCount}"/>
+    <select id="colType-${colCount}">
+      <option>INTEGER</option><option>TEXT</option><option>REAL</option>
+      <option>BLOB</option><option>VARCHAR(255)</option><option>BOOLEAN</option>
+      <option>DATETIME</option><option>DATE</option>
+    </select>
+    <div class="col-checkbox"><input type="checkbox" id="colPK-${colCount}" title="Primary Key"/></div>
+    <div class="col-checkbox"><input type="checkbox" id="colNN-${colCount}" title="Not Null"/></div>
+    <button class="col-del-btn" onclick="removeColumn(${colCount})">×</button>`;
+  document.getElementById('colRows').appendChild(row);
+}
+
+function removeColumn(id){
+  const el=document.getElementById('col-'+id);
+  if(el) el.remove();
+}
+
+async function createTable(){
+  const name=document.getElementById('newTableName').value.trim();
+  if(!name){setMsg('builderMsg','Enter a table name','error');return;}
+  if(!currentDb){setMsg('builderMsg','Select a database first','error');return;}
+  const colEls=document.querySelectorAll('#colRows .col-row');
+  const columns=[];
+  let valid=true;
+  colEls.forEach(row=>{
+    const id=row.id.replace('col-','');
+    const cname=document.getElementById('colName-'+id).value.trim();
+    if(!cname){valid=false;return;}
+    columns.push({
+      name:cname,
+      type:document.getElementById('colType-'+id).value,
+      primary_key:document.getElementById('colPK-'+id).checked,
+      not_null:document.getElementById('colNN-'+id).checked,
+      auto_increment:document.getElementById('colPK-'+id).checked&&document.getElementById('colType-'+id).value==='INTEGER',
+      default:null
+    });
+  });
+  if(!valid){setMsg('builderMsg','Fill in all column names','error');return;}
+  if(!columns.length){setMsg('builderMsg','Add at least one column','error');return;}
+  try{
+    const data=await api(`/db/${currentDb}/tables`,{method:'POST',body:JSON.stringify({table_name:name,columns})});
+    setMsg('builderMsg','✅ Table "'+name+'" created!','success');
+    toast('Table created!','success');
+    document.getElementById('newTableName').value='';
+    document.getElementById('colRows').innerHTML='';
+    colCount=0;addColumn();addColumn();
+    await loadTables();
+    switchDbTab('tables');
+  }catch(e){setMsg('builderMsg',e.message,'error');}
+}
+
+// ── SQL editor ────────────────────────────────────────────────────────────────
+function insertSQL(text){
+  const editor=document.getElementById('sqlEditor');
+  const pos=editor.selectionStart;
+  editor.value=editor.value.substring(0,pos)+text+editor.value.substring(pos);
+  editor.selectionStart=editor.selectionEnd=pos+text.length;
+  editor.focus();
+}
+
+function clearSQL(){
+  document.getElementById('sqlEditor').value='';
+  document.getElementById('sqlResult').innerHTML='';
+  document.getElementById('sqlStatus').textContent='';
+}
+
+async function runSQL(){
+  const sql=document.getElementById('sqlEditor').value.trim();
+  if(!sql){toast('Enter a SQL query','error');return;}
+  if(!currentDb){toast('Select a database first','error');return;}
+  const status=document.getElementById('sqlStatus');
+  const resultEl=document.getElementById('sqlResult');
+  status.textContent='Running...';
+  try{
+    const start=Date.now();
+    const data=await api(`/db/${currentDb}/query`,{method:'POST',body:JSON.stringify({sql})});
+    const elapsed=Date.now()-start;
+    status.textContent=`✅ Done in ${elapsed}ms`;
+    if(data.type==='select'){
+      if(!data.rows.length){
+        resultEl.innerHTML=`<div class="sql-result"><div class="sql-result-header">0 rows returned</div></div>`;
+        return;
+      }
+      let html=`<div class="sql-result"><div class="sql-result-header"><span>${data.count} rows</span><span>${elapsed}ms</span></div><div class="sql-result-body"><div class="data-table-wrap"><table class="data-table"><thead><tr>`;
+      data.columns.forEach(c=>{html+=`<th>${c}</th>`;});
+      html+=`</tr></thead><tbody>`;
+      data.rows.forEach(row=>{
+        html+=`<tr>`;
+        data.columns.forEach(c=>{html+=`<td title="${row[c]??''}">${row[c]??'<span style="color:var(--muted)">null</span>'}</td>`;});
+        html+=`</tr>`;
+      });
+      html+=`</tbody></table></div></div></div>`;
+      resultEl.innerHTML=html;
+    }else{
+      resultEl.innerHTML=`<div class="sql-result"><div class="sql-result-header">✅ ${data.message} — ${data.affected} rows affected</div></div>`;
+      await loadTables();
+    }
+  }catch(e){
+    status.textContent='❌ Error';
+    resultEl.innerHTML=`<div class="sql-result"><div class="sql-result-header" style="color:#fca5a5">❌ ${e.message}</div></div>`;
+  }
+}
+
+// ── Insert row modal ──────────────────────────────────────────────────────────
+function openInsertModal(tableName,cols){
+  insertRowCols=cols;currentTable=tableName;
+  const el=document.getElementById('insertRowFields');
+  el.innerHTML=cols.filter(c=>!c.pk).map(c=>`
+    <div class="field">
+      <label>${c.name} <span style="color:var(--accent2);font-size:.75rem">${c.type}</span></label>
+      <input type="text" id="insertCol-${c.name}" placeholder="${c.type}"/>
+    </div>`).join('');
+  document.getElementById('insertRowModal').classList.add('open');
+}
+
+function closeInsertModal(){document.getElementById('insertRowModal').classList.remove('open');}
+
+async function submitInsertRow(){
+  const rowData={};
+  insertRowCols.filter(c=>!c.pk).forEach(c=>{
+    const val=document.getElementById('insertCol-'+c.name).value;
+    rowData[c.name]=val;
+  });
+  try{
+    await fetch(API+`/db/${currentDb}/tables/${currentTable}/rows`,{
+      method:'POST',
+      headers:{'Authorization':'Bearer '+token,'Content-Type':'application/json'},
+      body:JSON.stringify(rowData)
+    });
+    closeInsertModal();
+    toast('Row inserted!','success');
+    await viewTableData(currentTable,tableOffset);
+  }catch(e){toast(e.message,'error');}
+}
+
+// ── PHP code ──────────────────────────────────────────────────────────────────
+async function loadPhpCode(){
+  if(!currentDb) return;
+  try{
+    const data=await api(`/db/${currentDb}/phpcode`);
+    document.getElementById('phpCodeBlock').textContent=data.php_code;
+  }catch(e){console.error(e);}
+}
+
+function copyPhpCode(){
+  const code=document.getElementById('phpCodeBlock').textContent;
+  navigator.clipboard.writeText(code);
+  toast('PHP code copied!','success');
+}
+
+// ── Export ────────────────────────────────────────────────────────────────────
+async function exportDatabase(){
+  if(!currentDb) return;
+  try{
+    const res=await fetch(API+`/db/${currentDb}/export`,{headers:{'Authorization':'Bearer '+token}});
+    const blob=await res.blob();
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;a.download=currentDb+'.sql';a.click();
+    URL.revokeObjectURL(url);
+    toast('Database exported!','success');
+  }catch(e){toast(e.message,'error');}
 }
 </script>
 </body>
